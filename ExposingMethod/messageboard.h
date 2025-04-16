@@ -10,12 +10,12 @@ class MessageBoard : public QObject
 public:
     explicit MessageBoard(QObject *parent = nullptr);
 
-    Q_INVOKABLE bool postMessage(const QString &msg) { // Method 1 Q_INVOKABLE
+    Q_INVOKABLE bool postMessage(const QString &msg) { //Exposing method using Method 1 Q_INVOKABLE
         qDebug() << "Called the C++ method with" << msg;
         emit messageSent(msg);
         return true;
     }
-public slots:      // Method 2 slots
+public slots:      //Exposing method using Method 2 slots
     void refresh() {
         qDebug() << "Called the C++ slot";
     }
